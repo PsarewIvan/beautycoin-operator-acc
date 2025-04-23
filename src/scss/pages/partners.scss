@@ -1,0 +1,73 @@
+@use '../vars.scss';
+
+.partners-table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+
+    @include vars.tablet {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include vars.mobile {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.partners-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 254px;
+    padding: 16px;
+    border-radius: 2px;
+    border: 1px solid vars.$darkner-16;
+    background-color: vars.$background-primary;
+
+    &__logo {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    &__title {
+        font-family: vars.$second-font;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: -0.2px;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__footer {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &__count {
+        font-family: vars.$second-font;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: -0.48px;
+    }
+
+    &__user-icon {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+    }
+}

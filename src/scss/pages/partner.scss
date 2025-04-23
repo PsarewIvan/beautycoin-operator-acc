@@ -1,0 +1,306 @@
+@use '../vars.scss';
+
+.partner-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__logo {
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+    }
+
+    &__title {
+        font-family: vars.$second-font;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: -0.48px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.partner-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+
+    @include vars.tablet {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    &__balance {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+
+        @include vars.mobile {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 8px;
+        }
+    }
+
+    &__coins {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: -0.48px;
+    }
+
+    &__coins-icon {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__divider {
+        width: 1px;
+        height: 44px;
+        background-color: vars.$darkner-16;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background-color: transparent;
+        font-family: vars.$second-font;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: vars.$link-500;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            color: vars.$link-600;
+        }
+    }
+
+    &__filters {
+        display: grid;
+        grid-template-columns: 156px 124px 119px;
+        gap: 4px;
+
+        @include vars.mobile {
+            width: calc(100vw - 32px);
+            overflow: auto;
+            padding-bottom: 16px;
+        }
+    }
+}
+
+.table-partner {
+    display: grid;
+    grid-template-columns: 128fr 160fr 240fr 184fr 440fr;
+
+    @include vars.tablet {
+        grid-template-columns: 128fr 160fr 128fr 144fr 160fr;
+    }
+
+    @include vars.mobile {
+        grid-template-columns: 1fr;
+    }
+
+    &__head {
+        display: contents;
+
+        .table-cell-h:nth-child(1) {
+            padding-left: 0;
+        }
+
+        @include vars.mobile {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    &__cell-h {
+        display: flex;
+        align-items: center;
+        padding: 16px 8px 14px;
+        border-bottom: 2px solid vars.$darkner-16;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+
+        &_right {
+            justify-content: flex-end;
+        }
+    }
+
+    &__row {
+        display: contents;
+        padding: 16px 0;
+
+        @include vars.mobile {
+            display: grid;
+            gap: 4px;
+            grid-template-columns: 82fr 146fr 100fr;
+            grid-template-areas:
+                'partner partner sum'
+                'type date date'
+                'description description description';
+            border-bottom: 1px solid vars.$darkner-16;
+        }
+    }
+
+    &__cell {
+        display: flex;
+        align-items: flex-start;
+        border-bottom: 1px solid vars.$darkner-16;
+        padding: 24px 8px 23px;
+        font-size: 16px;
+        line-height: 24px;
+
+        @include vars.mobile {
+            border-bottom: none;
+            padding: 0;
+        }
+
+        &_right {
+            justify-content: flex-end;
+        }
+
+        &_compact {
+            padding: 16px 8px 15px;
+
+            @include vars.mobile {
+                padding: 0;
+            }
+        }
+
+        &:nth-child(1) {
+            padding-left: 0;
+
+            @include vars.mobile {
+                grid-area: type;
+                margin-top: 4px;
+            }
+        }
+
+        &:nth-child(2) {
+            @include vars.mobile {
+                grid-area: date;
+                margin-top: 4px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        &:nth-child(3) {
+            @include vars.mobile {
+                grid-area: partner;
+            }
+        }
+
+        &:nth-child(4) {
+            @include vars.mobile {
+                grid-area: sum;
+            }
+        }
+
+        &:nth-child(5) {
+            @include vars.mobile {
+                grid-area: description;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    &__partner {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 8px;
+
+        img {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__sum {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 2px;
+
+        &::after {
+            content: '';
+            display: flex;
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image: url('../img/coin.svg');
+        }
+
+        &_red {
+            color: vars.$error-600;
+
+            &::after {
+                background-image: url('../img/coin-red.svg');
+            }
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__text-sub {
+        font-size: 14px;
+        line-height: 20px;
+        color: vars.$text-secondary;
+
+        @include vars.mobile {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 16px;
+        }
+    }
+}

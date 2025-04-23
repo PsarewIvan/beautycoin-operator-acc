@@ -1,0 +1,22 @@
+include ../icons/icon-cross.pug
+include ../components/button.pug
+include ../components/text-input.pug
+include ../components/text-area.pug
+include ../components/select.pug
+
+mixin popup-write-off()
+    .popup-support.hidden.js-popup-write-off
+        .popup-support__box
+            .popup-support__header
+                .popup-support__title
+                    .popup-support__title-text Новое списание
+                button.button-icon.popup-support__button-close.js-close-popup(type="button")
+                    +icon-cross('popup-support__icon-close')
+            .popup-support__content
+                form.popup-support__form(action="#")
+                    +text-input({label: 'Сумма списания', type:'number', className: 'popup-support__input-sum'})
+                    +select({label: 'Партнёр', placeholder: 'Выберите партнёра', searchPlaceholder: 'ID или название', searchText: 'Ничего не найдено', elements: [{value: 'value2', text: 'Dropdown item'},{value: 'value3', text: 'Dropdown item'},{value: 'value4', text: 'Dropdown item'},{value: 'value5', text: 'Dropdown item'},{value: 'value6', text: 'Dropdown item'},{value: 'value7', text: 'Dropdown item'},{value: 'value8', text: 'Dropdown item'},{value: 'value9', text: 'Dropdown item'}]})
+                    +text-area({label: 'Детали транзакции', className: 'popup-support__text-area'})
+                    .popup-support__controls
+                        +button({text: 'Отмена', theme: 'secondary', className: 'popup-support__controls-button js-close-popup'})
+                        +button({text: 'Списать', className: 'popup-support__controls-button'})

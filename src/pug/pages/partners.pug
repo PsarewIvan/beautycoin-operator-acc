@@ -1,0 +1,53 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'partners'
+
+block content
+    include ../components/select.pug
+    include ../icons/icon-chevron-left.pug
+    include ../icons/icon-coin.pug
+    include ../icons/icon-arrow-sort.pug
+
+    main.main
+        .content
+            .content-title
+                .content-title__title-wrapper
+                    h1.content-title__title Партнёры
+            .partners-table
+                .partners-card
+                    img.partners-card__logo(src='img/logo-sonline.png' alt='Логотип партнёра')
+                    .partners-card__content
+                        .partners-card__title SONLINE
+                        .partners-card__text ID
+                            span 0000 0000 0000 0000
+                    .partners-card__footer
+                        .partners-card__count 6920
+                        img.partners-card__user-icon(src='img/icon-users.svg' alt='Пользователи')
+                .partners-card
+                    img.partners-card__logo(src='img/logo-kartoteka.png' alt='Логотип партнёра')
+                    .partners-card__content
+                        .partners-card__title Картотека
+                        .partners-card__text ID
+                            span 0000 0000 0000 0000
+                    .partners-card__footer
+                        .partners-card__count 1523
+                        img.partners-card__user-icon(src='img/icon-users.svg' alt='Пользователи')
+                .partners-card
+                    img.partners-card__logo(src='img/logo-wazapa.png' alt='Логотип партнёра')
+                    .partners-card__content
+                        .partners-card__title Wazapa
+                        .partners-card__text ID
+                            span 0000 0000 0000 0000
+                    .partners-card__footer
+                        .partners-card__count 862
+                        img.partners-card__user-icon(src='img/icon-users.svg' alt='Пользователи')
+                .partners-card
+                    img.partners-card__logo(src='img/logo-trendista.png' alt='Логотип партнёра')
+                    .partners-card__content
+                        .partners-card__title Trendista Global
+                        .partners-card__text ID
+                            span 0000 0000 0000 0000
+                    .partners-card__footer
+                        .partners-card__count 209
+                        img.partners-card__user-icon(src='img/icon-users.svg' alt='Пользователи')

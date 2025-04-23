@@ -1,0 +1,270 @@
+@use '../vars.scss';
+
+.litepicker {
+    background-color: vars.$background-primary;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.16);
+
+    --litepicker-month-width: calc(32px * 7);
+    --litepicker-day-width: 32px;
+
+    @include vars.mobile {
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        overflow: auto;
+
+        --litepicker-month-width: calc(46px * 7);
+        --litepicker-day-width: 46px;
+    }
+
+    .container__main {
+        display: flex;
+        gap: 4px;
+    }
+
+    .container__months {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 16px;
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+
+        @include vars.mobile {
+            flex-direction: column;
+        }
+
+        .month-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 0;
+        }
+
+        .month-item-header {
+            gap: 16px;
+            padding: 0;
+
+            .button-previous-month,
+            .button-next-month {
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                border-radius: 2px;
+                border: 1px solid transparent;
+                color: vars.$text-secondary;
+                cursor: pointer;
+                transition: border-color 0.2s;
+
+                &:hover {
+                    border-color: vars.$link-500;
+                    color: inherit;
+                }
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+            }
+
+            .month-item-name {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+                text-transform: capitalize;
+            }
+
+            .month-item-year {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+            }
+
+            strong {
+                font-weight: inherit;
+            }
+        }
+
+        .month-item-weekdays-row {
+            & > div {
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                font-size: 12px;
+                line-height: 16px;
+                color: vars.$text-secondary;
+            }
+        }
+    }
+
+    .container__days {
+        & > div {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
+            padding: 0;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .day-item {
+            cursor: pointer;
+            border-radius: 2px;
+            border: 1px solid transparent;
+
+            &:hover {
+                color: vars.$text-primary;
+                border-color: vars.$link-500;
+                box-shadow: none;
+            }
+
+            &.is-start-date,
+            &.is-end-date {
+                border-radius: 2px;
+                border-color: vars.$link-500;
+                background-color: vars.$link-500;
+                color: vars.$text-primary-invert;
+            }
+
+            &.is-in-range {
+                border-color: vars.$link-50;
+                background-color: vars.$link-50;
+            }
+        }
+    }
+
+    .container__footer {
+        display: flex;
+        padding: 16px 0 0;
+        margin: auto 0 0;
+        background-color: transparent;
+        box-shadow: none;
+        border-top: 1px solid vars.$darkner-16;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        @include vars.mobile {
+            padding: 16px 12px 12px;
+        }
+
+        .button-cancel {
+            display: none;
+        }
+
+        .button-apply {
+            margin: 0;
+            margin-left: auto;
+            padding: 0;
+            background-color: transparent;
+            font-size: 14px;
+            line-height: 20px;
+            color: vars.$link-500;
+            cursor: pointer;
+        }
+
+        .preview-date-range {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}
+
+.custom-datepicker {
+    &__input {
+        height: 44px;
+        min-height: auto;
+    }
+
+    &__wrapper {
+        max-height: 348px;
+        display: flex;
+        gap: 4px;
+        padding: 4px;
+
+        @include vars.mobile {
+            flex-direction: column;
+            padding: 24px 16px;
+        }
+    }
+
+    &__header {
+        display: none;
+
+        @include vars.mobile {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding-bottom: 16px;
+        }
+    }
+
+    &__header-text {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: -0.48px;
+    }
+
+    &__preset-list {
+        overflow: auto;
+        flex-shrink: 0;
+        width: 163px;
+        display: flex;
+        flex-direction: column;
+
+        @include vars.mobile {
+            width: 100%;
+            height: 176px;
+        }
+    }
+
+    &__preset-element {
+        flex-shrink: 0;
+        padding: 12px 8px 12px 12px;
+        font-size: 14px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background: vars.$darkner-8;
+        }
+    }
+
+    &__calendar {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 12px 12px 12px 16px;
+        border-left: 1px solid vars.$darkner-16;
+
+        @include vars.mobile {
+            flex-direction: column-reverse;
+            padding: 0 0 24px;
+            margin-top: 4px;
+            border-left: none;
+        }
+    }
+
+    .custom-datepicker__preset-list {
+        display: none;
+    }
+}

@@ -1,0 +1,25 @@
+@use '../vars.scss';
+
+.index {
+    &__filters {
+        display: grid;
+        grid-template-columns: 156px 320px;
+        gap: 4px;
+
+        @include vars.mobile {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.table-index-wrapper {
+    overflow: auto;
+}
+
+.table {
+    .table_index {
+        display: table;
+        width: max-content;
+    }
+}

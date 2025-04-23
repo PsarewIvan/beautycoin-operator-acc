@@ -1,0 +1,70 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'index'
+
+block content
+    include ../components/select.pug
+    include ../icons/icon-chevron-left.pug
+    include ../icons/icon-arrow-sort.pug
+
+    main.main
+        .content
+            .content-title
+                .content-title__title-wrapper
+                    h1.content-title__title клиенты
+            .index__filters
+                +select({placeholder: 'Все партнёры', searchPlaceholder: 'ID или название', searchText: 'Ничего не найдено', elements: [{value: 'value2', text: 'Dropdown item'},{value: 'value3', text: 'Dropdown item'},{value: 'value4', text: 'Dropdown item'},{value: 'value5', text: 'Dropdown item'},{value: 'value6', text: 'Dropdown item'},{value: 'value7', text: 'Dropdown item'},{value: 'value8', text: 'Dropdown item'},{value: 'value9', text: 'Dropdown item'}]})
+                +select({placeholder: 'Все клиенты', searchPlaceholder: 'ID или название', searchText: 'Ничего не найдено', elements: [{value: 'value2', text: 'Dropdown item'},{value: 'value3', text: 'Dropdown item'},{value: 'value4', text: 'Dropdown item'},{value: 'value5', text: 'Dropdown item'},{value: 'value6', text: 'Dropdown item'},{value: 'value7', text: 'Dropdown item'},{value: 'value8', text: 'Dropdown item'},{value: 'value9', text: 'Dropdown item'}]})
+            .table-index-wrapper
+                .table.table_index
+                    .table__head
+                        .table__cell-h.fixed Клиент
+                        .table__cell-h.fixed Баланс
+                        .table__cell-h Sonline
+                        .table__cell-h Wazapa
+                        .table__cell-h Trendinsta
+                        .table__cell-h Картотека
+                        .table__cell-h Sonline
+                        .table__cell-h Wazapa
+                        .table__cell-h Trendinsta
+                        .table__cell-h Картотека
+
+                    .table__row
+                        .table__cell.fixed
+                            span.table__mobile-content ID: 
+                            span 0000 0000 0000 0000
+                        .table__cell.table__cell_compact.fixed
+                            .table__partner
+                                img(src='img/logo-royal-barber.png')
+                                span The Royal barbershop
+                        .table__cell
+                            span.table__mobile-content , с 
+                            span 30.09.2025
+                        .table__cell
+                            a.table__link(href="#") Списания
+                        .table__cell
+                            a.table__link(href="#") Списания
+                        .table__cell
+                            a.table__link(href="#") Списания
+                        .table__cell
+                            a.table__link(href="#") Списания
+                        .table__cell
+                            a.table__link(href="#") Списания
+                        .table__cell
+                            a.table__link(href="#") Списания
+                        .table__cell
+                            a.table__link(href="#") Списания
+
+            .pagination
+                button.pagination__button.pagination__button_left.pagination__button_disabled(type='button')
+                    +icon-chevron-left('pagination__icon')
+                button.pagination__button(type='button') 1
+                button.pagination__button.pagination__button_active(type='button') 2
+                button.pagination__button.pagination__button_desktop(type='button') 3
+                button.pagination__button.pagination__button_desktop(type='button') 4
+                button.pagination__button.pagination__button_desktop(type='button') 5
+                button.pagination__button.pagination__button_disabled(type='button') ...
+                button.pagination__button(type='button') 6
+                button.pagination__button.pagination__button_right(type='button')
+                    +icon-chevron-left('pagination__icon pagination__icon_right')

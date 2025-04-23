@@ -1,0 +1,22 @@
+include ../icons/icon-cross.pug
+include ../icons/icon-lens.pug
+
+mixin text-input({label, alert, placeholder, value, className, subText, forceAlert, hasIcon, type="text"})
+    - var inputForceClass = forceAlert ? 'text-input__input_force-alert' : ''
+    - var forceClass = hasIcon ? className + ' ' + 'text-input_with-icon' : className
+
+    .text-input.js-input-node(class=forceClass)
+        if label
+            .text-input__label= label
+        .text-input__input-wrapper
+            input.text-input__input.js-input(class=inputForceClass placeholder=placeholder value=value type=type)
+            button.text-input__reset.js-input-reset(type="button")
+                +icon-cross('text-input__icon')
+            if hasIcon
+                +icon-lens('text-input__lens-icon')
+        if alert
+            .text-input__alert.js-input-alert= alert
+        if subText
+            .text-input__sub-text= subText
+        if forceAlert
+            .text-input__force-alert= forceAlert

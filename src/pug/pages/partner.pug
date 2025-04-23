@@ -1,0 +1,118 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'partner'
+
+block content
+    include ../components/select.pug
+    include ../icons/icon-chevron-left.pug
+    include ../icons/icon-coin.pug
+    include ../icons/icon-arrow-sort.pug
+    include ../icons/icon-arrow-left.pug
+
+    main.main
+        .content
+            .partner-header
+                a.button-icon.partner-header__button.tooltip-trigger.js-tooltip-trigger(href="/")
+                    +icon-arrow-left('partner-header__button-icon')
+                    +tooltip({text: 'К списку клиентов'})
+                img.partner-header__logo(src='img/logo-royal-barber.png')
+                .partner-header__title The Royal barbershop
+            .partner-controls
+                .partner-controls__balance
+                    .partner-controls__coins
+                        span 241 916,25
+                        +icon-coin('partner-controls__coins-icon')
+                    .partner-controls__buttons
+                        button.partner-controls__button.js-write-off-popup-button(type="button") Списать
+                        .partner-controls__divider
+                        button.partner-controls__button.js-accrue-popup-button(type="button") Начислить
+                .partner-controls__filters
+                    +select({placeholder: 'Тип операции', searchPlaceholder: 'ID или название', searchText: 'Ничего не найдено', elements: [{value: 'value2', text: 'Dropdown item'},{value: 'value3', text: 'Dropdown item'},{value: 'value4', text: 'Dropdown item'},{value: 'value5', text: 'Dropdown item'},{value: 'value6', text: 'Dropdown item'},{value: 'value7', text: 'Dropdown item'},{value: 'value8', text: 'Dropdown item'},{value: 'value9', text: 'Dropdown item'}]})
+                    div.text-input.custom-datepicker
+                        input.text-input__input.custom-datepicker__input.js-datepicker(type="text" placeholder="Дата" readonly)
+                        div.custom-datepicker__preset-list.js-datepicker-preset-list
+                            div.custom-datepicker__preset-element(data-range="7") Последние 7 дней
+                            div.custom-datepicker__preset-element(data-range="30") Последние 30 дней
+                            div.custom-datepicker__preset-element(data-range="this-month") В этом месяце
+                            div.custom-datepicker__preset-element(data-range="last-month") В прошлом месяце
+                            div.custom-datepicker__preset-element(data-range="7") Последние 7 дней
+                            div.custom-datepicker__preset-element(data-range="30") Последние 30 дней
+                            div.custom-datepicker__preset-element(data-range="this-month") В этом месяце
+                            div.custom-datepicker__preset-element(data-range="last-month") В прошлом месяце
+                            div.custom-datepicker__preset-element(data-range="7") Последние 7 дней
+                            div.custom-datepicker__preset-element(data-range="30") Последние 30 дней
+                            div.custom-datepicker__preset-element(data-range="this-month") В этом месяце
+                            div.custom-datepicker__preset-element(data-range="last-month") В прошлом месяце
+                            div.custom-datepicker__preset-element(data-range="7") Последние 7 дней
+                            div.custom-datepicker__preset-element(data-range="30") Последние 30 дней
+                            div.custom-datepicker__preset-element(data-range="this-month") В этом месяце
+                            div.custom-datepicker__preset-element(data-range="last-month") В прошлом месяце
+                    +select({placeholder: 'Партнёр', searchPlaceholder: 'ID или название', searchText: 'Ничего не найдено', elements: [{value: 'value2', text: 'Dropdown item'},{value: 'value3', text: 'Dropdown item'},{value: 'value4', text: 'Dropdown item'},{value: 'value5', text: 'Dropdown item'},{value: 'value6', text: 'Dropdown item'},{value: 'value7', text: 'Dropdown item'},{value: 'value8', text: 'Dropdown item'},{value: 'value9', text: 'Dropdown item'}]})
+  
+            .table-partner
+                .table-partner__head
+                    .table-partner__cell-h Тип
+                    .table-partner__cell-h Дата и время
+                    .table-partner__cell-h Партнёр
+                    .table-partner__cell-h.table-partner__cell-h_right Сумма
+                    .table-partner__cell-h Примечание
+                .table-partner__row
+                    .table-partner__cell
+                        .badge.badge_green.badge_plus Начислено
+                    .table-partner__cell 30.09.2025 20:39
+                    .table-partner__cell.table-partner__cell_compact
+                        .table-partner__partner
+                            img(src='img/logo-sonline.png')
+                            span Sonline
+                    .table-partner__cell.table-partner__cell_right
+                        .table-partner__sum 2&nbsp;000,00
+                    .table-partner__cell
+                        .table-partner__text срок действия до 08.01.2026
+                .table-partner__row
+                    .table-partner__cell
+                        .badge.badge_blue.badge_check Потрачено
+                    .table-partner__cell 30.09.2025 20:39
+                    .table-partner__cell.table-partner__cell_compact
+                        .table-partner__partner
+                            img(src='img/logo-sonline.png')
+                            span Sonline
+                    .table-partner__cell.table-partner__cell_right
+                        .table-partner__sum -500,00
+                    .table-partner__cell
+                        .table-partner__text Оплата модуля «Картотека»
+                            .table-partner__text-sub Пользователь Kristina
+                .table-partner__row
+                    .table-partner__cell
+                        .badge.badge_green.badge_plus Начислено
+                    .table-partner__cell 30.09.2025 20:39
+                    .table-partner__cell.table-partner__cell_compact
+                        .table-partner__partner
+                            img(src='img/logo-wazapa.png')
+                            span Wazapa
+                    .table-partner__cell.table-partner__cell_right
+                        .table-partner__sum 300,00
+                    .table-partner__cell
+                        .table-partner__text срок действия до 08.01.2026
+                .table-partner__row
+                    .table-partner__cell
+                        .badge.badge_red.badge_fire Сгорело
+                    .table-partner__cell 30.09.2025 20:39
+                    .table-partner__cell.table-partner__cell_compact
+                    .table-partner__cell.table-partner__cell_right
+                        .table-partner__sum.table-partner__sum_red −23,69
+                    .table-partner__cell
+                        .table-partner__text Непотраченные бонусы, начисленные 22.06.2025
+
+            .pagination
+                button.pagination__button.pagination__button_left.pagination__button_disabled(type='button')
+                    +icon-chevron-left('pagination__icon')
+                button.pagination__button(type='button') 1
+                button.pagination__button.pagination__button_active(type='button') 2
+                button.pagination__button.pagination__button_desktop(type='button') 3
+                button.pagination__button.pagination__button_desktop(type='button') 4
+                button.pagination__button.pagination__button_desktop(type='button') 5
+                button.pagination__button.pagination__button_disabled(type='button') ...
+                button.pagination__button(type='button') 6
+                button.pagination__button.pagination__button_right(type='button')
+                    +icon-chevron-left('pagination__icon pagination__icon_right')
