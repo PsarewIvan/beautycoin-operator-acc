@@ -1,5 +1,6 @@
 (() => {
     const TOOLTIP_BOTTOM_CLASS = 'tooltip_bottom';
+    const TOOLTIP_ALIGN_LEFT_CLASS = 'tooltip_left';
 
     document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('resize', initTooltip);
@@ -19,12 +20,19 @@
     }
 
     function adjustTooltipPosition(tooltip) {
-        tooltip.classList.remove(TOOLTIP_BOTTOM_CLASS);
-        const tooltipRect = tooltip.getBoundingClientRect();
-        const tooltipTopPointY = tooltipRect.top;
+        tooltip.classList.remove(
+            TOOLTIP_BOTTOM_CLASS,
+            TOOLTIP_ALIGN_LEFT_CLASS
+        );
 
-        if (tooltipTopPointY < 0) {
+        const tooltipRect = tooltip.getBoundingClientRect();
+
+        if (tooltipRect.top < 0) {
             tooltip.classList.add(TOOLTIP_BOTTOM_CLASS);
+        }
+
+        if (tooltipRect.right > window.innerWidth) {
+            tooltip.classList.add(TOOLTIP_ALIGN_LEFT_CLASS);
         }
     }
 })();
