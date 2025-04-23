@@ -23,6 +23,11 @@
         flex-direction: column;
         gap: 8px;
         width: 224px;
+
+        @include vars.mobile {
+            width: auto;
+            margin: 16px 0;
+        }
     }
 
     &__client-header {
@@ -58,6 +63,10 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        @include vars.mobile {
+            width: calc(100vw - 32px);
+        }
     }
 
     &__balance {
@@ -76,6 +85,19 @@
         height: 24px;
     }
 
+    &__mobile-head {
+        display: none;
+        margin-bottom: 2px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        color: vars.$text-secondary;
+
+        @include vars.mobile {
+            display: block;
+        }
+    }
+
     table {
         width: max-content;
         border-collapse: collapse;
@@ -83,6 +105,10 @@
 
     thead {
         border-bottom: 2px solid vars.$darkner-16;
+
+        @include vars.mobile {
+            display: none;
+        }
     }
 
     tbody {
@@ -93,6 +119,16 @@
             &:hover {
                 td {
                     background-color: vars.$link-50;
+                }
+            }
+
+            @include vars.mobile {
+                display: block;
+
+                &:hover {
+                    td {
+                        background-color: vars.$background-primary;
+                    }
                 }
             }
         }
@@ -107,6 +143,12 @@
         font-size: 16px;
         font-weight: 600;
         line-height: 24px;
+
+        @include vars.mobile {
+            width: fit-content;
+            padding: 0;
+            text-align: left;
+        }
 
         &:first-child {
             width: 240px;
@@ -123,6 +165,10 @@
 
             &:nth-child(2) {
                 left: 240px;
+
+                @include vars.mobile {
+                    left: 0;
+                }
             }
         }
 
@@ -131,9 +177,27 @@
                 border-right: 1px solid vars.$darkner-16;
             }
         }
+
+        @include vars.mobile {
+            &:nth-child(2) {
+                border-right: none;
+            }
+        }
     }
 
     td {
         font-weight: 400;
+
+        @include vars.mobile {
+            &:nth-child(1) {
+                width: calc(100vw - 32px);
+            }
+
+            &:not(:nth-child(1)) {
+                display: inline-block;
+                margin-right: 24px;
+                margin-bottom: 16px;
+            }
+        }
     }
 }
