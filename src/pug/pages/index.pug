@@ -12,49 +12,115 @@ block content
         .content
             .content-title
                 .content-title__title-wrapper
-                    h1.content-title__title клиенты
+                    h1.content-title__title Клиенты
             .index__filters
                 +select({placeholder: 'Все партнёры', searchPlaceholder: 'ID или название', searchText: 'Ничего не найдено', elements: [{value: 'value2', text: 'Dropdown item'},{value: 'value3', text: 'Dropdown item'},{value: 'value4', text: 'Dropdown item'},{value: 'value5', text: 'Dropdown item'},{value: 'value6', text: 'Dropdown item'},{value: 'value7', text: 'Dropdown item'},{value: 'value8', text: 'Dropdown item'},{value: 'value9', text: 'Dropdown item'}]})
                 +select({placeholder: 'Все клиенты', searchPlaceholder: 'ID или название', searchText: 'Ничего не найдено', elements: [{value: 'value2', text: 'Dropdown item'},{value: 'value3', text: 'Dropdown item'},{value: 'value4', text: 'Dropdown item'},{value: 'value5', text: 'Dropdown item'},{value: 'value6', text: 'Dropdown item'},{value: 'value7', text: 'Dropdown item'},{value: 'value8', text: 'Dropdown item'},{value: 'value9', text: 'Dropdown item'}]})
-            .table-index-wrapper
-                .table.table_index
-                    .table__head
-                        .table__cell-h.fixed Клиент
-                        .table__cell-h.fixed Баланс
-                        .table__cell-h Sonline
-                        .table__cell-h Wazapa
-                        .table__cell-h Trendinsta
-                        .table__cell-h Картотека
-                        .table__cell-h Sonline
-                        .table__cell-h Wazapa
-                        .table__cell-h Trendinsta
-                        .table__cell-h Картотека
+            .index-table
+                table
+                    thead
+                        tr
+                            th.fixed Клиент
+                            th.fixed
+                                .index-table__last-fixed Баланс
+                            th Sonline
+                            th Wazapa
+                            th Trendinsta
+                            th Картотека
+                            th Sonline
+                            th Wazapa
+                            th Trendinsta
+                            th Картотека
+                    tbody
+                        tr
+                            td.fixed
+                                .index-table__client
+                                    .index-table__client-header
+                                        img.index-table__client-logo(src='img/logo-royal-barber.png' alt='Логотип партнёра')
+                                        .index-table__client-name The Royal barbershop
+                                    .index-table__client-footer
+                                        .index-table__client-id ID: 
+                                            span 0000 0000 0000 0000
+                                        .index-table__client-email email.address.company@mail.ru
+                            td.fixed
+                                .index-table__balance.index-table__last-fixed
+                                    .index-table__balance-number 7 200
+                                    +icon-coin('index-table__balance-icon')
+                            td 6 000
+                            td 1 200
+                            td 0
+                            td —
+                            td 6 000
+                            td 1 200
+                            td 0
+                            td —
+                        tr
+                            td.fixed
+                                .index-table__client
+                                    .index-table__client-header
+                                        img.index-table__client-logo(src='img/logo-abzu.png' alt='Логотип партнёра')
+                                        .index-table__client-name ABZЫ Barbershop
+                                    .index-table__client-footer
+                                        .index-table__client-id ID: 
+                                            span 0000 0000 0000 0000
+                                        .index-table__client-email email.address.company@mail.ru
+                            td.fixed
+                                .index-table__balance.index-table__last-fixed
+                                    .index-table__balance-number 12 800
+                                    +icon-coin('index-table__balance-icon')
+                            td 6 000
+                            td 6 000
+                            td —
+                            td 800
+                            td 6 000
+                            td 6 000
+                            td —
+                            td 800
+                        tr
+                            td.fixed
+                                .index-table__client
+                                    .index-table__client-header
+                                        img.index-table__client-logo(src='img/logo-anna-key.png' alt='Логотип партнёра')
+                                        .index-table__client-name Anna Key
+                                    .index-table__client-footer
+                                        .index-table__client-id ID: 
+                                            span 0000 0000 0000 0000
+                                        .index-table__client-email email.address.company@mail.ru
+                            td.fixed
+                                .index-table__balance.index-table__last-fixed
+                                    .index-table__balance-number 300
+                                    +icon-coin('index-table__balance-icon')
+                            td 0
+                            td —
+                            td 300
+                            td —
+                            td 0
+                            td —
+                            td 300
+                            td —
+                        tr
+                            td.fixed
+                                .index-table__client
+                                    .index-table__client-header
+                                        img.index-table__client-logo(src='img/logo-cherry.png' alt='Логотип партнёра')
+                                        .index-table__client-name Вишня
+                                    .index-table__client-footer
+                                        .index-table__client-id ID: 
+                                            span 0000 0000 0000 0000
+                                        .index-table__client-email email.address.company@mail.ru
+                            td.fixed
+                                .index-table__balance.index-table__last-fixed
+                                    .index-table__balance-number 1 350
+                                    +icon-coin('index-table__balance-icon')
+                            td 750
+                            td —
+                            td 600
+                            td —
+                            td 750
+                            td —
+                            td 600
+                            td —
 
-                    .table__row
-                        .table__cell.fixed
-                            span.table__mobile-content ID: 
-                            span 0000 0000 0000 0000
-                        .table__cell.table__cell_compact.fixed
-                            .table__partner
-                                img(src='img/logo-royal-barber.png')
-                                span The Royal barbershop
-                        .table__cell
-                            span.table__mobile-content , с 
-                            span 30.09.2025
-                        .table__cell
-                            a.table__link(href="#") Списания
-                        .table__cell
-                            a.table__link(href="#") Списания
-                        .table__cell
-                            a.table__link(href="#") Списания
-                        .table__cell
-                            a.table__link(href="#") Списания
-                        .table__cell
-                            a.table__link(href="#") Списания
-                        .table__cell
-                            a.table__link(href="#") Списания
-                        .table__cell
-                            a.table__link(href="#") Списания
 
             .pagination
                 button.pagination__button.pagination__button_left.pagination__button_disabled(type='button')

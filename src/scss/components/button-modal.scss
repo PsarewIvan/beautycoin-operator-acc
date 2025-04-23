@@ -1,6 +1,7 @@
 @use '../vars.scss';
 
 .button-modal {
+    z-index: 1000;
     position: fixed;
     bottom: 32px;
     right: 32px;

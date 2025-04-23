@@ -2,24 +2,138 @@
 
 .index {
     &__filters {
+        overflow: auto;
         display: grid;
         grid-template-columns: 156px 320px;
         gap: 4px;
 
         @include vars.mobile {
-            display: flex;
-            flex-direction: column;
+            padding-bottom: 12px;
         }
     }
 }
 
-.table-index-wrapper {
+.index-table {
     overflow: auto;
-}
+    width: 100vw;
+    padding-bottom: 16px;
 
-.table {
-    .table_index {
-        display: table;
+    &__client {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 224px;
+    }
+
+    &__client-header {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    &__client-logo {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    &__client-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__client-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__client-email {
+        width: 174px;
+        color: vars.$text-secondary;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__balance {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2px;
+    }
+
+    &__balance-number {
+        font-weight: 600;
+    }
+
+    &__balance-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    table {
         width: max-content;
+        border-collapse: collapse;
+    }
+
+    thead {
+        border-bottom: 2px solid vars.$darkner-16;
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid vars.$darkner-16;
+            cursor: pointer;
+
+            &:hover {
+                td {
+                    background-color: vars.$link-50;
+                }
+            }
+        }
+    }
+
+    th,
+    td {
+        width: 182px;
+        padding: 16px 8px;
+        background-color: vars.$background-primary;
+        text-align: right;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+
+        &:first-child {
+            width: 240px;
+            text-align: left;
+        }
+
+        &.fixed {
+            position: sticky;
+            z-index: 1;
+
+            &:nth-child(1) {
+                left: 0;
+            }
+
+            &:nth-child(2) {
+                left: 240px;
+            }
+        }
+
+        @include vars.tablet {
+            &:nth-child(2) {
+                border-right: 1px solid vars.$darkner-16;
+            }
+        }
+    }
+
+    td {
+        font-weight: 400;
     }
 }
