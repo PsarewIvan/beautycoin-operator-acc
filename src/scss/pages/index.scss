@@ -27,12 +27,12 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
-        padding: 16px 0 0;
+        padding: 16px 8px 0;
         border-bottom: 1px solid vars.$darkner-16;
         cursor: pointer;
 
         &:hover {
-            // background-color: vars.$link-50;
+            background-color: vars.$link-50;
         }
 
         @include vars.mobile {
