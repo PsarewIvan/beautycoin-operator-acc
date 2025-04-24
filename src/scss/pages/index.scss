@@ -36,6 +36,7 @@
         }
 
         @include vars.mobile {
+            padding: 16px 0 0;
             gap: 16px;
         }
     }
