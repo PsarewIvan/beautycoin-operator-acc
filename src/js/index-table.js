@@ -1,5 +1,5 @@
 (function () {
-    const tableRows = document.querySelectorAll('.index-table tr');
+    const tableRows = document.querySelectorAll('.js-index-table-row');
 
     tableRows.forEach((row) => {
         row.addEventListener('click', () => {

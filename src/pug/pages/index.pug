@@ -16,179 +16,212 @@ block content
             .index__filters
                 +select({placeholder: 'Все партнёры', searchPlaceholder: 'ID или название', searchText: 'Ничего не найдено', elements: [{value: 'value2', text: 'Dropdown item'},{value: 'value3', text: 'Dropdown item'},{value: 'value4', text: 'Dropdown item'},{value: 'value5', text: 'Dropdown item'},{value: 'value6', text: 'Dropdown item'},{value: 'value7', text: 'Dropdown item'},{value: 'value8', text: 'Dropdown item'},{value: 'value9', text: 'Dropdown item'}]})
                 +select({placeholder: 'Все клиенты', searchPlaceholder: 'ID или название', searchText: 'Ничего не найдено', elements: [{value: 'value2', text: 'Dropdown item'},{value: 'value3', text: 'Dropdown item'},{value: 'value4', text: 'Dropdown item'},{value: 'value5', text: 'Dropdown item'},{value: 'value6', text: 'Dropdown item'},{value: 'value7', text: 'Dropdown item'},{value: 'value8', text: 'Dropdown item'},{value: 'value9', text: 'Dropdown item'}]})
-            .index-table
-                table
-                    thead
-                        tr
-                            th.fixed Клиент
-                            th.fixed
-                                .index-table__last-fixed Баланс
-                            th Sonline
-                            th Wazapa
-                            th Trendinsta
-                            th Картотека
-                            th Sonline
-                            th Wazapa
-                            th Trendinsta
-                            th Картотека
-                    tbody
-                        tr(data-href="./partner.html")
-                            td.fixed
-                                .index-table__client
-                                    .index-table__client-header
-                                        img.index-table__client-logo(src='img/logo-royal-barber.png' alt='Логотип партнёра')
-                                        .index-table__client-name The Royal barbershop
-                                    .index-table__client-footer
-                                        .index-table__client-id ID: 
-                                            span 0000 0000 0000 0000
-                                        .index-table__client-email email.address.company@mail.ru
-                            td.fixed
-                                .index-table__mobile-head Баланс
-                                .index-table__balance.index-table__last-fixed
-                                    .index-table__balance-number 7 200
-                                    +icon-coin('index-table__balance-icon')
-                            td
-                                .index-table__mobile-head Sonline
-                                span 6 000
-                            td
-                                .index-table__mobile-head Wazapa
-                                span 1 200
-                            td
-                                .index-table__mobile-head Trendinsta
-                                span 0
-                            td
-                                .index-table__mobile-head Картотека
-                                span —
-                            td
-                                .index-table__mobile-head Sonline
-                                span 6 000
-                            td
-                                .index-table__mobile-head Wazapa
-                                span 1 200
-                            td
-                                .index-table__mobile-head Trendinsta
-                                span 0
-                            td
-                                .index-table__mobile-head Картотека
-                                span —
-                        tr(data-href="./partner.html")
-                            td.fixed
-                                .index-table__client
-                                    .index-table__client-header
-                                        img.index-table__client-logo(src='img/logo-abzu.png' alt='Логотип партнёра')
-                                        .index-table__client-name ABZЫ Barbershop
-                                    .index-table__client-footer
-                                        .index-table__client-id ID: 
-                                            span 0000 0000 0000 0000
-                                        .index-table__client-email email.address.company@mail.ru
-                            td.fixed
-                                .index-table__mobile-head Баланс
-                                .index-table__balance.index-table__last-fixed
-                                    .index-table__balance-number 12 800
-                                    +icon-coin('index-table__balance-icon')
-                            td
-                                .index-table__mobile-head Sonline
-                                span 6 000
-                            td
-                                .index-table__mobile-head Wazapa
-                                span 6 000
-                            td
-                                .index-table__mobile-head Trendinsta
-                                span —
-                            td
-                                .index-table__mobile-head Картотека
-                                span —
-                            td
-                                .index-table__mobile-head Sonline
-                                span 6 000
-                            td
-                                .index-table__mobile-head Wazapa
-                                span 6 000
-                            td
-                                .index-table__mobile-head Trendinsta
-                                span —
-                            td
-                                .index-table__mobile-head Картотека
-                                span —
-                        tr(data-href="./partner.html")
-                            td.fixed
-                                .index-table__client
-                                    .index-table__client-header
-                                        img.index-table__client-logo(src='img/logo-anna-key.png' alt='Логотип партнёра')
-                                        .index-table__client-name Anna Key
-                                    .index-table__client-footer
-                                        .index-table__client-id ID: 
-                                            span 0000 0000 0000 0000
-                                        .index-table__client-email email.address.company@mail.ru
-                            td.fixed
-                                .index-table__mobile-head Баланс
-                                .index-table__balance.index-table__last-fixed
-                                    .index-table__balance-number 300
-                                    +icon-coin('index-table__balance-icon')
-                            td
-                                .index-table__mobile-head Sonline
-                                span 0
-                            td
-                                .index-table__mobile-head Wazapa
-                                span —
-                            td
-                                .index-table__mobile-head Trendinsta
-                                span 300
-                            td
-                                .index-table__mobile-head Картотека
-                                span —
-                            td
-                                .index-table__mobile-head Sonline
-                                span 0
-                            td
-                                .index-table__mobile-head Wazapa
-                                span —
-                            td
-                                .index-table__mobile-head Trendinsta
-                                span 300
-                            td
-                                .index-table__mobile-head Картотека
-                                span —
-                        tr(data-href="./partner.html")
-                            td.fixed
-                                .index-table__client
-                                    .index-table__client-header
-                                        img.index-table__client-logo(src='img/logo-cherry.png' alt='Логотип партнёра')
-                                        .index-table__client-name Вишня
-                                    .index-table__client-footer
-                                        .index-table__client-id ID: 
-                                            span 0000 0000 0000 0000
-                                        .index-table__client-email email.address.company@mail.ru
-                            td.fixed
-                                .index-table__mobile-head Баланс
-                                .index-table__balance.index-table__last-fixed
-                                    .index-table__balance-number 1 350
-                                    +icon-coin('index-table__balance-icon')
-                            td
-                                .index-table__mobile-head Sonline
-                                span 750
-                            td
-                                .index-table__mobile-head Wazapa
-                                span —
-                            td
-                                .index-table__mobile-head Trendinsta
-                                span 600
-                            td
-                                .index-table__mobile-head Картотека
-                                span —
-                            td
-                                .index-table__mobile-head Sonline
-                                span 750
-                            td
-                                .index-table__mobile-head Wazapa
-                                span —
-                            td
-                                .index-table__mobile-head Trendinsta
-                                span 600
-                            td
-                                .index-table__mobile-head Картотека
-                                span —
 
+            .index-table
+                .index-table__row.js-index-table-row(data-href='./partner.html')
+                    .index-table__row-header
+                        .index-table__name-block
+                            img.index-table__logo(src='img/logo-royal-barber.png' alt='Логотип партнёра')
+                            .index-table__name The Royal barbershop
+                        .index-table__id ID: 
+                            span 0000 0000 0000 0000
+                        .index-table__email email.address.company@mail.ru
+                    .index-table__row-footer
+                        .index-table__balance
+                            .index-table__balance-text Баланс
+                            .index-table__balance-content
+                                .index-table__balance-number 7 200
+                                +icon-coin('index-table__balance-icon')
+                        .index-table__scroll
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                .index-table__row.js-index-table-row(data-href='./partner.html')
+                    .index-table__row-header
+                        .index-table__name-block
+                            img.index-table__logo(src='img/logo-abzu.png' alt='Логотип партнёра')
+                            .index-table__name ABZЫ Barbershop
+                        .index-table__id ID: 
+                            span 0000 0000 0000 0000
+                        .index-table__email email.address.company@mail.ru
+                    .index-table__row-footer
+                        .index-table__balance
+                            .index-table__balance-text Баланс
+                            .index-table__balance-content
+                                .index-table__balance-number 12 800
+                                +icon-coin('index-table__balance-icon')
+                        .index-table__scroll
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                .index-table__row.js-index-table-row(data-href='./partner.html')
+                    .index-table__row-header
+                        .index-table__name-block
+                            img.index-table__logo(src='img/logo-anna-key.png' alt='Логотип партнёра')
+                            .index-table__name Anna Key
+                        .index-table__id ID: 
+                            span 0000 0000 0000 0000
+                        .index-table__email email.address.company@mail.ru
+                    .index-table__row-footer
+                        .index-table__balance
+                            .index-table__balance-text Баланс
+                            .index-table__balance-content
+                                .index-table__balance-number 300
+                                +icon-coin('index-table__balance-icon')
+                        .index-table__scroll
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                .index-table__row.js-index-table-row(data-href='./partner.html')
+                    .index-table__row-header
+                        .index-table__name-block
+                            img.index-table__logo(src='img/logo-cherry.png' alt='Логотип партнёра')
+                            .index-table__name Вишня
+                        .index-table__id ID: 
+                            span 0000 0000 0000 0000
+                        .index-table__email email.address.company@mail.ru
+                    .index-table__row-footer
+                        .index-table__balance
+                            .index-table__balance-text Баланс
+                            .index-table__balance-content
+                                .index-table__balance-number 1 350
+                                +icon-coin('index-table__balance-icon')
+                        .index-table__scroll
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
+                            .index-table__client
+                                .index-table__client-name Sonline
+                                .index-table__client-balance 6 000
+                            .index-table__client
+                                .index-table__client-name Wazapa
+                                .index-table__client-balance 1 200
+                            .index-table__client
+                                .index-table__client-name Trendinsta
+                                .index-table__client-balance 0
+                            .index-table__client
+                                .index-table__client-name Картотека
+                                .index-table__client-balance —
 
             .pagination
                 button.pagination__button.pagination__button_left.pagination__button_disabled(type='button')

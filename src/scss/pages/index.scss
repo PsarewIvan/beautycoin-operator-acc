@@ -8,76 +8,136 @@
         gap: 4px;
 
         @include vars.mobile {
-            padding-bottom: 12px;
+            width: 100vw;
+            margin-left: -16px;
+            padding: 0 16px 12px;
         }
     }
 }
 
 .index-table {
-    overflow: auto;
-    width: 100vw;
-    padding-bottom: 16px;
+    display: flex;
+    flex-direction: column;
 
-    &__client {
+    @include vars.mobile {
+        width: calc(100vw - 16px);
+    }
+
+    &__row {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        width: 224px;
+        padding: 16px 0 0;
+        border-bottom: 1px solid vars.$darkner-16;
+        cursor: pointer;
+
+        &:hover {
+            // background-color: vars.$link-50;
+        }
 
         @include vars.mobile {
-            width: auto;
-            margin: 16px 0;
+            gap: 16px;
         }
     }
 
-    &__client-header {
-        display: flex;
-        gap: 8px;
+    &__row-header {
+        display: grid;
+        grid-template-columns: 240px max-content 1fr;
+        gap: 16px;
         align-items: center;
+
+        @include vars.mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            padding-right: 16px;
+        }
     }
 
-    &__client-logo {
+    &__name-block {
         flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 240px;
+
+        @include vars.mobile {
+            padding-bottom: 4px;
+        }
+    }
+
+    &__logo {
         width: 40px;
         height: 40px;
         object-fit: contain;
     }
 
-    &__client-name {
+    &__name {
+        font-size: 16px;
+        line-height: 24px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    &__client-footer {
+    &__id,
+    &__email {
+        flex-shrink: 0;
         display: flex;
-        flex-direction: column;
         gap: 2px;
+        padding: 2px 0 0 16px;
+        border-left: 1px solid vars.$darkner-8;
         font-size: 14px;
         line-height: 20px;
+        color: vars.$text-secondary;
+
+        @include vars.mobile {
+            padding: 0;
+            border-left: none;
+        }
     }
 
-    &__client-email {
-        width: 174px;
-        color: vars.$text-secondary;
+    &__email {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    &__row-footer {
+        display: flex;
+        gap: 24px;
+        padding-left: 48px;
 
         @include vars.mobile {
-            width: calc(100vw - 32px);
+            padding-left: 0;
         }
     }
 
     &__balance {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        width: 96px;
+    }
+
+    &__balance-text {
+        font-family: vars.$second-font;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    &__balance-content {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
         gap: 2px;
     }
 
     &__balance-number {
+        font-size: 16px;
         font-weight: 600;
+        line-height: 24px;
     }
 
     &__balance-icon {
@@ -85,119 +145,30 @@
         height: 24px;
     }
 
-    &__mobile-head {
-        display: none;
-        margin-bottom: 2px;
+    &__scroll {
+        overflow: auto;
+        width: max-content;
+        display: flex;
+        gap: 24px;
+        padding-bottom: 16px;
+    }
+
+    &__client {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 64px;
+    }
+
+    &__client-name {
         font-size: 12px;
         font-weight: 500;
         line-height: 16px;
         color: vars.$text-secondary;
-
-        @include vars.mobile {
-            display: block;
-        }
     }
 
-    table {
-        width: max-content;
-        border-collapse: collapse;
-    }
-
-    thead {
-        border-bottom: 2px solid vars.$darkner-16;
-
-        @include vars.mobile {
-            display: none;
-        }
-    }
-
-    tbody {
-        tr {
-            border-bottom: 1px solid vars.$darkner-16;
-            cursor: pointer;
-
-            &:hover {
-                td {
-                    background-color: vars.$link-50;
-                }
-            }
-
-            @include vars.mobile {
-                display: block;
-
-                &:hover {
-                    td {
-                        background-color: vars.$background-primary;
-                    }
-                }
-            }
-        }
-    }
-
-    th,
-    td {
-        width: 182px;
-        padding: 16px 8px;
-        background-color: vars.$background-primary;
-        text-align: right;
+    &__client-balance {
         font-size: 16px;
-        font-weight: 600;
         line-height: 24px;
-
-        @include vars.mobile {
-            width: fit-content;
-            padding: 0;
-            text-align: left;
-        }
-
-        &:first-child {
-            width: 240px;
-            text-align: left;
-        }
-
-        &.fixed {
-            position: sticky;
-            z-index: 1;
-
-            &:nth-child(1) {
-                left: 0;
-            }
-
-            &:nth-child(2) {
-                left: 240px;
-
-                @include vars.mobile {
-                    left: 0;
-                }
-            }
-        }
-
-        @include vars.tablet {
-            &:nth-child(2) {
-                border-right: 1px solid vars.$darkner-16;
-            }
-        }
-
-        @include vars.mobile {
-            &:nth-child(2) {
-                border-right: none;
-            }
-        }
-    }
-
-    td {
-        font-weight: 400;
-
-        @include vars.mobile {
-            &:nth-child(1) {
-                width: calc(100vw - 32px);
-            }
-
-            &:not(:nth-child(1)) {
-                display: inline-block;
-                margin-right: 24px;
-                margin-bottom: 16px;
-            }
-        }
     }
 }
